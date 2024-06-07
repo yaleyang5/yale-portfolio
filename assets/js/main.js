@@ -398,4 +398,20 @@
 						$main._show(location.hash.substr(1), true);
 					});
 
+		// Form Submission.
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbwIfJk3RFFg27nnk-XvlaZmB-6DCa48fiA2qFQ-O_6Ej2FIZMe90RmI4URhuHcndpey7A/exec'
+
+			const form = document.forms['contact-form']
+
+			form.addEventListener('submit', e => {
+				document.getElementById('submit-contact-form').style.backgroundColor='#CCCCCC';
+				e.preventDefault();
+				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+					.then(response => alert('Thank you! Form submitted successfully.'))
+					.then(() => { 
+						window.location.replace('#');
+						document.getElementById('submit-contact-form').style.backgroundColor=''; 
+						document.getElementById('contact-form').reset();
+					}).catch(error => console.error('Error!', error.message));
+			});
 })(jQuery);
