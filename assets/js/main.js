@@ -399,14 +399,16 @@
 					});
 
 		// Form Submission.
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbwIfJk3RFFg27nnk-XvlaZmB-6DCa48fiA2qFQ-O_6Ej2FIZMe90RmI4URhuHcndpey7A/exec'
+			const googleSheet = 'https://script.google.com/macros/s/AKfycbwIfJk3RFFg27nnk-XvlaZmB-6DCa48fiA2qFQ-O_6Ej2FIZMe90RmI4URhuHcndpey7A/exec';
+			const emailSubmit = 'https://api.web3forms.com/submit';
 
 			const form = document.forms['contact-form']
 
 			form.addEventListener('submit', e => {
 				document.getElementById('submit-contact-form').style.backgroundColor='#CCCCCC';
 				e.preventDefault();
-				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				fetch(googleSheet, { method: 'POST', body: new FormData(form)})
+					.then(response => fetch(emailSubmit, { method: 'POST', body: new FormData(form)}))
 					.then(response => alert('Thank you! Form submitted successfully.'))
 					.then(() => { 
 						window.location.replace('#');
