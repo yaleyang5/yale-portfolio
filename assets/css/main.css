@@ -194,7 +194,7 @@ input, select, textarea {
 			width: -webkit-max-content;
 			width: -ms-max-content;
 			width: max-content;
-			padding-bottom: 0.5rem;
+			padding-bottom: 0.25rem;
 			margin: 0 0 2rem 0;
 		}
 
@@ -653,7 +653,7 @@ input, select, textarea {
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.5;
+			opacity: 0.25;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -696,7 +696,7 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 2.5rem 0;
+			margin: 0 0 2.5rem;
 			width: 100%;
 		}
 
@@ -704,10 +704,25 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			.image.main.sub {
+				min-width: 60%;
+				max-width: 60%;
+			}
+
+		.image-paragraph {
+			padding: 0 0 2.5rem .5rem; 
+			margin: 0;
+		}
+
 		@media screen and (max-width: 736px) {
 
 			.image.main {
-				margin: 2rem 0;
+				margin: 0 0 2rem;
+			}
+
+			.image-paragraph {
+				padding: 0 0 2rem .5rem; 
+				margin: 0;
 			}
 
 		}
@@ -715,10 +730,25 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.image.main {
-				margin: 1.5rem 0;
+				margin: 0 0 1.5rem;
+			}
+
+				.image.main.sub {
+					min-width: 55%;
+					max-width: 55%;
+				}
+
+			.image-paragraph {
+				padding: 0 0 1.5rem .5rem; 
+				margin: 0;
 			}
 
 		}
+
+	.image-wrapper{
+		display: flex;
+		flex-direction: row;
+	}
 
 /* List */
 
@@ -1112,6 +1142,7 @@ input, select, textarea {
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
 		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1214,7 +1245,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			#wrapper {
-				padding: 3rem 2rem;
+				padding: 2rem;
 			}
 
 		}
@@ -1567,7 +1598,7 @@ input, select, textarea {
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 3.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
+			width: 45rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 10px;
