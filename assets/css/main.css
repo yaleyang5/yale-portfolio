@@ -159,6 +159,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
+			color: rgba(255, 203, 207, 1);
 		}
 
 	strong, b {
@@ -949,11 +950,14 @@ input, select, textarea {
 			}
 
 				ul.icons li a:hover {
+					color: inherit;
 					background-color: rgba(255, 255, 255, 0.075);
+					
 				}
 
 				ul.icons li a:active {
-					background-color: rgba(255, 255, 255, 0.175);
+					color: inherit;
+					background-color: rgba(255, 255, 255, 0.075);
 				}
 
 /* Table */
@@ -1357,12 +1361,12 @@ input, select, textarea {
 					margin-bottom: 0;
 				}
 
-			#header .content p {
-				text-transform: uppercase;
-				letter-spacing: 0.2rem;
-				font-size: .9rem;
-				line-height: 2;
-			}
+				#header .content .inner p {
+					text-transform: uppercase;
+					letter-spacing: 0.2rem;
+					font-size: .9rem;
+					line-height: 2;
+				}
 
 		#header nav ul {
 			display: -moz-flex;
@@ -1409,9 +1413,13 @@ input, select, textarea {
 						background-color: rgba(255, 255, 255, 0.075);
 					}
 
+					#header nav ul li div:hover > a { color: rgba(255, 203, 207, 1); }
+
 					#header nav ul li div:active {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
+
+					#header nav ul li div:active > a { color: rgba(255, 203, 207, 1); }
 
 		#header nav.use-middle:after {
 			content: '';
@@ -1700,11 +1708,13 @@ input, select, textarea {
 		}
 
 		#icons a:hover {
-			background-color: rgba(255, 255, 255, 0.075);
+			color: inherit;
+			background-color: rgba(255, 203, 207, 0.75);
 		}
 
 		#icons a:active {
-			background-color: rgba(255, 255, 255, 0.175);
+			color: inherit;
+			background-color: rgba(255, 203, 207, 0.75);
 		}
 
 		body.is-article-visible #icons {
