@@ -24,6 +24,37 @@
 			xxsmall:  [ null,      '360px'  ]
 		});
 
+	// Set random background image color.
+
+		// Helper function to generate a random color in rgba format
+		function getRandomColor() {
+			const r = Math.floor(Math.random() * 256);
+			const g = Math.floor(Math.random() * 256);
+			const b = Math.floor(Math.random() * 256);
+			const a = 0.95; // keeping alpha constant as 0.95
+			return `rgba(${r}, ${g}, ${b}, ${a})`;
+		}
+
+		// Function to update the background-image of the #bg:before pseudo-element
+		function updateBackgroundImage() {
+			// Generate two random colors
+			const color1 = getRandomColor();
+			const color2 = getRandomColor();
+
+			// Construct the new background-image value
+			const newBackgroundImage = `linear-gradient(in oklab, ${color1}, ${color2}), url("images/parasol_kirby.gif")`;
+
+			// Create a new style element
+			const styleElement = document.createElement('style');
+			styleElement.textContent = `#bg:before { background-image: ${newBackgroundImage} !important; }`;
+			document.head.appendChild(styleElement);
+
+			// console.log(`Updated background-image to: ${newBackgroundImage}`);
+		}
+
+		// Call the function to update the background-image on page load
+		document.addEventListener('DOMContentLoaded', updateBackgroundImage);
+
 	// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
