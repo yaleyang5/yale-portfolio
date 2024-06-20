@@ -43,6 +43,7 @@
 
 			// Construct the new background-image value
 			const newBackgroundImage = `linear-gradient(in oklab, ${color1}, ${color2}), url("images/parasol_kirby.gif")`;
+			// const newBackgroundImage = `linear-gradient(in oklab, ${color1}, ${color2}), url("images/warp_star.gif")`;
 
 			// Create a new style element
 			const styleElement = document.createElement('style');
