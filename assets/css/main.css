@@ -858,6 +858,7 @@ input[type="radio"] + label:before {
 .image-wrapper {
   display: flex;
   flex-direction: row;
+  gap: 0.5rem;
 }
 
 /* List */
