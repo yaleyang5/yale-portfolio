@@ -44,14 +44,44 @@
         <div class="content">
           <div class="inner">
             <h1>
-              Hi, I'm
+              <script>
+                document.write(Math.random() < 0.5 ? "Hi, I'm " : "Hello, I'm ")
+              </script>
               <a
                 href="https://drive.google.com/file/d/1Td_YsYcqEH3Y1FcpvxA8WhcUgX4JRvsb/view"
                 target="_blank"
-                >Yale</a
-              >.
+              >
+                <script>
+                  document.write(Math.random() < 0.5 ? "Yale." : "Yale!")
+                </script>
+              </a>
             </h1>
-            <p>Your favorite frontend developer</p>
+            <p>
+              <script>
+                document.write(
+                  Math.random() < 0.5 ? "Your favorite " : "Your reliable "
+                )
+              </script>
+              frontend developer
+            </p>
+            <p
+              style="
+                position: absolute;
+                top: 0px;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                font-size: 12px;
+              "
+            >
+              <script>
+                document.write(
+                  Math.random() < 0.5
+                    ? "(try refreshing to see the magic)"
+                    : "(refresh to see the magic!)"
+                )
+              </script>
+            </p>
           </div>
         </div>
         <nav>
@@ -68,13 +98,23 @@
                   href="#work"
                   class="icon fa-check-square list-icon pinkify"
                 ></a>
-                <a href="#work" class="pinkify">Work</a>
+                <a href="#work" class="pinkify"
+                  ><script>
+                    document.write(Math.random() < 0.5 ? "WORK" : "W0RK")
+                  </script></a
+                >
               </div>
             </li>
             <li>
               <div>
                 <a href="#projects" class="icon fa-heart list-icon pinkify"></a>
-                <a href="#projects" class="pinkify">Projects</a>
+                <a href="#projects" class="pinkify"
+                  ><script>
+                    document.write(
+                      Math.random() < 0.5 ? "PROJECTS" : "PR0J3C75"
+                    )
+                  </script></a
+                >
               </div>
             </li>
             <li>
@@ -83,7 +123,11 @@
                   href="#contact"
                   class="icon fa-comment-dots list-icon pinkify"
                 ></a>
-                <a href="#contact" class="pinkify">Contact</a>
+                <a href="#contact" class="pinkify"
+                  ><script>
+                    document.write(Math.random() < 0.5 ? "CONTACT" : "C0N7AC7")
+                  </script></a
+                >
               </div>
             </li>
             <!--<li><a href="#elements">Elements</a></li>-->
@@ -95,7 +139,11 @@
       <div id="main">
         <!-- About -->
         <article id="about">
-          <h2 class="major">About Me</h2>
+          <h2 class="major">
+            <script>
+              document.write(Math.random() < 0.5 ? "ABOUT ME" : "A80U7 M3")
+            </script>
+          </h2>
           <span class="image main"><img src="images/pic01.png" alt="" /></span>
           <p>
             Hi, my name is

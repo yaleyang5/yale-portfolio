@@ -1483,7 +1483,7 @@ body.is-preload #bg:before {
   -webkit-transition-delay: 0.25s;
   -ms-transition-delay: 0.25s;
   transition-delay: 0.25s;
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 2rem 2rem;
   max-height: 40rem;
   overflow: hidden;
 }
@@ -1628,7 +1628,7 @@ body.is-preload #header .content .inner {
   }
 
   #header .content .inner {
-    padding: 2.5rem 1rem;
+    padding: 3rem 1rem 2rem 1rem;
   }
 
   #header .content p {
@@ -1646,7 +1646,7 @@ body.is-preload #header .content .inner {
   }
 
   #header .content .inner {
-    padding: 2.5rem 0;
+    padding: 3rem 0 2rem 0;
   }
 
   #header nav ul {
