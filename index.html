@@ -59,21 +59,13 @@
             <p>
               <script>
                 document.write(
-                  Math.random() < 0.5 ? "Your favorite " : "Your reliable "
+                  Math.random() < 0.5
+                    ? "Your favorite frontend developer"
+                    : "The developer you've been looking for"
                 )
               </script>
-              frontend developer
             </p>
-            <p
-              style="
-                position: absolute;
-                top: 0px;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                font-size: 12px;
-              "
-            >
+            <p class="refresh">
               <script>
                 document.write(
                   Math.random() < 0.5
@@ -89,7 +81,13 @@
             <li>
               <div>
                 <a href="#about" class="icon fa-user list-icon pinkify"></a>
-                <a href="#about" class="pinkify">About Me</a>
+                <a href="#about" class="pinkify"
+                  ><script>
+                    document.write(
+                      Math.random() < 0.5 ? "ABOUT ME" : "AB0U7 M3"
+                    )
+                  </script></a
+                >
               </div>
             </li>
             <li>

@@ -1499,6 +1499,17 @@ body.is-preload #bg:before {
   line-height: 2;
 }
 
+#header .content .inner .refresh {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  font-size: 12px;
+  height: fit-content;
+  text-transform: none;
+}
+
 #header nav ul {
   display: -moz-flex;
   display: -webkit-flex;
