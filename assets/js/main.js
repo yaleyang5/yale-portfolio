@@ -26,7 +26,7 @@
   // Set random background image color.
 
   // Helper function to generate a random color in rgba format
-  function getRandomColor() {
+  const getRandomColor = () => {
     const r = Math.floor(Math.random() * 256)
     const g = Math.floor(Math.random() * 256)
     const b = Math.floor(Math.random() * 256)
@@ -34,26 +34,84 @@
     return `rgba(${r}, ${g}, ${b}, ${a})`
   }
 
-  // Function to update the background-image of the #bg:before pseudo-element
-  function updateBackgroundImage() {
-    // Generate two random colors
+  // Helper function to choose a random background image
+  const getRandomBackgroundImage = () => {
+    const images = ["parasol_kirby.gif", "cook_kirby.gif", "warp_star.gif"]
+    return images[Math.floor(Math.random() * images.length)]
+  }
+
+  // Function to update all random content on the page
+  const updateRandomContent = () => {
+    // Initialize refresh counter
+    if (localStorage.getItem("refreshCount")) {
+      localStorage.setItem(
+        "refreshCount",
+        parseInt(localStorage.getItem("refreshCount")) + 1
+      )
+    } else {
+      localStorage.setItem("refreshCount", 1)
+    }
+
+    // Update the background-image of the #bg:before pseudo-element
     const color1 = getRandomColor()
     const color2 = getRandomColor()
-
-    // Construct the new background-image value
-    const newBackgroundImage = `linear-gradient(in oklab, ${color1}, ${color2}), url("images/parasol_kirby.gif")`
-    // const newBackgroundImage = `linear-gradient(in oklab, ${color1}, ${color2}), url("images/warp_star.gif")`;
-
-    // Create a new style element
+    const backgroundImage = getRandomBackgroundImage()
+    const newBackgroundImage = `linear-gradient(in oklab, ${color1}, ${color2}), url("images/${backgroundImage}")`
     const styleElement = document.createElement("style")
     styleElement.textContent = `#bg:before { background-image: ${newBackgroundImage} !important; }`
     document.head.appendChild(styleElement)
 
-    // console.log(`Updated background-image to: ${newBackgroundImage}`);
+    // Update text content
+    document.getElementById("greeting").textContent =
+      Math.random() < 1 / 3
+        ? "Hi, I'm "
+        : Math.random() < 0.5
+        ? "Hello, I'm "
+        : "Hey, I'm "
+
+    document.getElementById("name").textContent =
+      Math.random() < 1 / 3
+        ? "Yale."
+        : Math.random() < 0.5
+        ? "Yale!"
+        : "Yale :-)"
+
+    document.getElementById("tagline").textContent =
+      Math.random() < 1 / 3
+        ? "Your Favorite Frontend Developer"
+        : Math.random() < 0.5
+        ? "The Developer You've Been Looking For"
+        : "The Frontend Developer You Need"
+
+    const refreshCount = localStorage.getItem("refreshCount")
+    document.getElementById("refresh-message").textContent =
+      refreshCount < 5
+        ? Math.random() < 1 / 3
+          ? "(try refreshing to see the magic)"
+          : Math.random() < 0.5
+          ? "(try refreshing!)"
+          : "(refresh to see the magic!)"
+        : Math.random() < 1 / 4
+        ? `You've refreshed this page ${refreshCount} times!`
+        : Math.random() < 1 / 3
+        ? `You've refreshed this page ${refreshCount} times.`
+        : Math.random() < 0.5
+        ? `You've refreshed ${refreshCount} times!`
+        : `You've refreshed ${refreshCount} times.`
+
+    // Update nav text
+    document.getElementById("about-text").textContent =
+      Math.random() < 0.5 ? "ABOUT ME" : "AB0U7 M3"
+    document.getElementById("work-text").textContent =
+      Math.random() < 0.5 ? "WORK" : "W0RK"
+    document.getElementById("projects-text").textContent =
+      Math.random() < 0.5 ? "PROJECTS" : "PR0J3C75"
+    document.getElementById("contact-text").textContent =
+      Math.random() < 0.5 ? "CONTACT" : "C0N7AC7"
   }
 
-  // Call the function to update the background-image on page load
-  document.addEventListener("DOMContentLoaded", updateBackgroundImage)
+  // Call the function to update content on page load
+  document.addEventListener("DOMContentLoaded", updateRandomContent)
 
   // Play initial animations on page load.
   $window.on("load", function () {

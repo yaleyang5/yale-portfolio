@@ -1289,6 +1289,12 @@ button {
       rgba(0, 74, 77, 0.95)
     ),
     url("../../images/parasol_kirby.gif");
+  /* background-image: linear-gradient(
+      in oklab,
+      rgba(179, 71, 71, 0.95),
+      rgba(0, 74, 77, 0.95)
+    ),
+    url("../../images/cook_kirby.gif"); */
   /* background-image: linear-gradient(in oklab, rgba(179, 71, 71, 0.95), rgba(0, 74, 77, 0.95)), url("../../images/warp_star.gif"); */
   background-size: auto, 256px 256px;
   background-position: center, center;
