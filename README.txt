@@ -1,3 +1,3 @@
 Portfolio - Yale Yang
 
-Deployed at https://yaleyang.xyz!
+Take a look at https://yaleyang.xyz!
