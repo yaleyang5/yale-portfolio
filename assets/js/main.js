@@ -151,6 +151,27 @@
   var delay = 325,
     locked = false
 
+  // Youtube Video.
+
+  const workSection = document.getElementById("work")
+  const youtubeVideo = document.getElementById("youtube-video")
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        // Stop the video by setting the src to an empty string
+        youtubeVideo.src = ""
+      } else {
+        // Restore the video src if needed (optional)
+        youtubeVideo.src =
+          "https://www.youtube.com/embed/?autoplay=1&mute=0&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=kyb4ehU9WNw&loop=0&endscreen=0"
+      }
+    })
+  })
+
+  // Observe the work section
+  observer.observe(workSection)
+
   // Methods.
   $main._show = function (id, initial) {
     var $article = $main_articles.filter("#" + id)
