@@ -87,7 +87,7 @@
     document.getElementById("refresh-message").textContent =
       refreshCount < 5
         ? Math.random() < 1 / 3
-          ? "(try refreshing to see the magic)"
+          ? "(try refreshing to spot the difference)"
           : Math.random() < 0.5
           ? "(try refreshing!)"
           : "(refresh to see the magic!)"
