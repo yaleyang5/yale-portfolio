@@ -90,7 +90,7 @@
           ? "(try refreshing to spot the difference)"
           : Math.random() < 0.5
           ? "(try refreshing!)"
-          : "(refresh to see the magic!)"
+          : "(refresh to see a couple of things change...)"
         : Math.random() < 1 / 4
         ? `You've refreshed this page ${refreshCount} times!`
         : Math.random() < 1 / 3
